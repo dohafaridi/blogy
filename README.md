@@ -50,9 +50,9 @@ $ npm run test:cov
 
 - [ ] Adding Status Badges
 
-- [ ] Linter : tslint + eslint + prettier = ❤️
+- [x] Linter : tslint + eslint + prettier = ❤️
 
-- [ ] Husky
+- [x] Husky
 
 - [ ] Environment Configuration : development and production environment configurations
 
@@ -62,7 +62,7 @@ $ npm run test:cov
 
 - [ ] Swagger Api Documentation
 
-- [ ] Database connection
+- [x] Database connection
 
 - [ ] User CRUD
 
