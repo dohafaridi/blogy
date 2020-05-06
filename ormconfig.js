@@ -1,13 +1,15 @@
 const env = require('env-var');
 
+const TYPEORM_TYPE = env
+  .get('TYPEORM_TYPE')
+  .required()
+  .asEnum(['sqlite', 'mysql', 'postgres']);
+
 module.exports = {
-  type: env.get('TYPEORM_CONNECTION').asString(),
-  host: env.get('TYPEORM_HOST').asString(),
-  port: env.get('TYPEORM_PORT').asString(),
-  username: env.get('TYPEORM_USERNAME').asString(),
-  password: env.get('TYPEORM_PASSWORD').asString(),
+  name: env.get('TYPEORM_NAME').asString(),
+  type: TYPEORM_TYPE,
   database: env.get('TYPEORM_DATABASE').asString(),
-  dropSchema: env.get('TYPEORM_DROP_SCHEMA').asBool(),
+  synchronize: env.get('TYPEORM_SYNCHRONIZE').asBool(),
   logging: env.get('TYPEORM_LOGGING').asBool(),
-  entities: ['dist/**/*.entity{.ts,.js}'],
+  entities: [__dirname + '/dist/**/**.entity.js'],
 };

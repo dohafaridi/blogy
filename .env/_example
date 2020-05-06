@@ -1,0 +1,17 @@
+# env files are loaded by src/utils/applyEnvVars.ts
+
+# Avoid accessing process.env directly (except NODE_ENV)
+# Please use https://npmjs.com/package/env-var instead
+# Because environment variables are loaded as string type by default
+# So `VAR_NAME=false` => process.env.VAR_NAME === 'false' which is truthy
+
+TYPEORM_TYPE=
+TYPEORM_HOST=
+TYPEORM_PORT=
+TYPEORM_USERNAME=
+TYPEORM_PASSWORD=
+TYPEORM_DATABASE=
+TYPEORM_DROP_SCHEMA=
+TYPEORM_SYNCHRONIZE=
+TYPEORM_LOGGING=
+TYPEORM_NAME=
