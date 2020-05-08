@@ -58,13 +58,13 @@ $ npm run test:cov
 
 - [ ] CORS
 
-- [ ] JWT Authentication
+- [x] JWT Authentication
 
 - [ ] Swagger Api Documentation
 
 - [x] Database connection
 
-- [ ] User CRUD
+- [x] User module
 
 - [ ] Follow / Unflow user
 

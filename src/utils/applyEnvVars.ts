@@ -1,5 +1,4 @@
 import * as path from 'path';
-import * as env from 'env-var';
 
 const envDir = path.resolve(__dirname, '../../.env');
 const NODE_ENV = 'development'; // @todo: refacto

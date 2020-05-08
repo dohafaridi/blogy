@@ -5,6 +5,8 @@
 # Because environment variables are loaded as string type by default
 # So `VAR_NAME=false` => process.env.VAR_NAME === 'false' which is truthy
 
+JWT_SECRET=
+
 TYPEORM_TYPE=
 TYPEORM_HOST=
 TYPEORM_PORT=
