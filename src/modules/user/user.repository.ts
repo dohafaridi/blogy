@@ -36,8 +36,8 @@ export class UserRepository extends Repository<UserEntity> {
     };
   }
 
-  async login(LoginReqDto: LoginReqDto): Promise<GetSessionResDto> {
-    const targetUser = await this.findOne(LoginReqDto);
+  async login(loginReqDto: LoginReqDto): Promise<GetSessionResDto> {
+    const targetUser = await this.findOne(loginReqDto);
 
     if (!targetUser) {
       throw new UnprocessableEntityException(

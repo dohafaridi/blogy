@@ -16,8 +16,8 @@ export class UserService {
     return newUser;
   }
 
-  async login(LoginReqDto: LoginReqDto): Promise<GetSessionResDto> {
-    const targetUser = await this.userRepository.login(LoginReqDto);
+  async login(loginReqDto: LoginReqDto): Promise<GetSessionResDto> {
+    const targetUser = await this.userRepository.login(loginReqDto);
     return targetUser;
   }
 }

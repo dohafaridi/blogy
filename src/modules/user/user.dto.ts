@@ -1,10 +1,17 @@
-import { IsString, IsEmail, Matches, IsNotEmpty } from 'class-validator';
+import { IsString, IsEmail, Matches, IsNotEmpty, IsJWT } from 'class-validator';
 
 export class GetSessionResDto {
   id: string;
 
   username: string;
 }
+
+export class RegisterResDto extends GetSessionResDto {
+  @IsJWT()
+  token: string;
+}
+
+export class LoginResDto extends RegisterResDto {}
 
 export class RegisterReqDto {
   @IsNotEmpty()
