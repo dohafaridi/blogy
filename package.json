@@ -1,6 +1,19 @@
 {
+  "name": "blogy",
+  "author": "Doha Faridi",
   "private": true,
   "workspaces": [
-    "./packages"
-  ]
+    "packages/*"
+  ],
+  "scripts": {
+    "server:dev": "yarn workspace @blogy/server run start:dev",
+    "server:test": "yarn workspace @blogy/server run test",
+    "server:lint": "yarn workspace @blogy/server run lint",
+    "server:format": "yarn workspace @blogy/server run format",
+    "server:build": "yarn workspace @blogy/server run build",
+    "client:dev": "yarn workspace @blogy/client run start",
+    "client:test": "yarn workspace @blogy/client run test",
+    "client:clean": "yarn workspace @blogy/client run clean",
+    "client:build": "yarn workspace @blogy/client run build"
+  }
 }

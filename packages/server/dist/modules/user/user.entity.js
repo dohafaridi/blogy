@@ -9,40 +9,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserEntity = void 0;
 const typeorm_1 = require("typeorm");
-let UserEntity = class UserEntity extends typeorm_1.BaseEntity {
-};
-__decorate([
-    typeorm_1.PrimaryGeneratedColumn('uuid'),
-    __metadata("design:type", String)
-], UserEntity.prototype, "id", void 0);
-__decorate([
-    typeorm_1.CreateDateColumn({ name: 'created_at', select: false }),
-    __metadata("design:type", Date)
-], UserEntity.prototype, "createdAt", void 0);
-__decorate([
-    typeorm_1.UpdateDateColumn({ name: 'updated_at', select: false }),
-    __metadata("design:type", Date)
-], UserEntity.prototype, "updatedAt", void 0);
-__decorate([
-    typeorm_1.Index({ unique: true }),
-    typeorm_1.Column({ unique: true }),
-    __metadata("design:type", String)
-], UserEntity.prototype, "username", void 0);
-__decorate([
-    typeorm_1.Column({ type: 'text', nullable: true }),
-    __metadata("design:type", String)
-], UserEntity.prototype, "bio", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], UserEntity.prototype, "email", void 0);
-__decorate([
-    typeorm_1.Column({ select: false }),
-    __metadata("design:type", String)
-], UserEntity.prototype, "password", void 0);
-UserEntity = __decorate([
-    typeorm_1.Entity()
-], UserEntity);
+let UserEntity = (() => {
+    let UserEntity = class UserEntity extends typeorm_1.BaseEntity {
+    };
+    __decorate([
+        typeorm_1.PrimaryGeneratedColumn('uuid'),
+        __metadata("design:type", String)
+    ], UserEntity.prototype, "id", void 0);
+    __decorate([
+        typeorm_1.CreateDateColumn({ name: 'created_at', select: false }),
+        __metadata("design:type", Date)
+    ], UserEntity.prototype, "createdAt", void 0);
+    __decorate([
+        typeorm_1.UpdateDateColumn({ name: 'updated_at', select: false }),
+        __metadata("design:type", Date)
+    ], UserEntity.prototype, "updatedAt", void 0);
+    __decorate([
+        typeorm_1.Index({ unique: true }),
+        typeorm_1.Column({ unique: true }),
+        __metadata("design:type", String)
+    ], UserEntity.prototype, "username", void 0);
+    __decorate([
+        typeorm_1.Column({ type: 'text', nullable: true }),
+        __metadata("design:type", String)
+    ], UserEntity.prototype, "bio", void 0);
+    __decorate([
+        typeorm_1.Column(),
+        __metadata("design:type", String)
+    ], UserEntity.prototype, "email", void 0);
+    __decorate([
+        typeorm_1.Column({ select: false }),
+        __metadata("design:type", String)
+    ], UserEntity.prototype, "password", void 0);
+    UserEntity = __decorate([
+        typeorm_1.Entity()
+    ], UserEntity);
+    return UserEntity;
+})();
 exports.UserEntity = UserEntity;
 //# sourceMappingURL=user.entity.js.map

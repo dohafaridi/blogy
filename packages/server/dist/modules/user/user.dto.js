@@ -9,56 +9,66 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoginReqDto = exports.RegisterReqDto = exports.LoginResDto = exports.RegisterResDto = exports.GetSessionResDto = void 0;
 const class_validator_1 = require("class-validator");
 class GetSessionResDto {
 }
 exports.GetSessionResDto = GetSessionResDto;
-class RegisterResDto extends GetSessionResDto {
-}
-__decorate([
-    class_validator_1.IsJWT(),
-    __metadata("design:type", String)
-], RegisterResDto.prototype, "token", void 0);
+let RegisterResDto = (() => {
+    class RegisterResDto extends GetSessionResDto {
+    }
+    __decorate([
+        class_validator_1.IsJWT(),
+        __metadata("design:type", String)
+    ], RegisterResDto.prototype, "token", void 0);
+    return RegisterResDto;
+})();
 exports.RegisterResDto = RegisterResDto;
 class LoginResDto extends RegisterResDto {
 }
 exports.LoginResDto = LoginResDto;
-class RegisterReqDto {
-}
-__decorate([
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], RegisterReqDto.prototype, "username", void 0);
-__decorate([
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.IsEmail(),
-    __metadata("design:type", String)
-], RegisterReqDto.prototype, "email", void 0);
-__decorate([
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], RegisterReqDto.prototype, "bio", void 0);
-__decorate([
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.Matches(/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$./, {
-        message: 'password too weak',
-    }),
-    __metadata("design:type", String)
-], RegisterReqDto.prototype, "password", void 0);
+let RegisterReqDto = (() => {
+    class RegisterReqDto {
+    }
+    __decorate([
+        class_validator_1.IsNotEmpty(),
+        class_validator_1.IsString(),
+        __metadata("design:type", String)
+    ], RegisterReqDto.prototype, "username", void 0);
+    __decorate([
+        class_validator_1.IsNotEmpty(),
+        class_validator_1.IsEmail(),
+        __metadata("design:type", String)
+    ], RegisterReqDto.prototype, "email", void 0);
+    __decorate([
+        class_validator_1.IsNotEmpty(),
+        class_validator_1.IsString(),
+        __metadata("design:type", String)
+    ], RegisterReqDto.prototype, "bio", void 0);
+    __decorate([
+        class_validator_1.IsNotEmpty(),
+        class_validator_1.Matches(/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$./, {
+            message: 'password too weak',
+        }),
+        __metadata("design:type", String)
+    ], RegisterReqDto.prototype, "password", void 0);
+    return RegisterReqDto;
+})();
 exports.RegisterReqDto = RegisterReqDto;
-class LoginReqDto {
-}
-__decorate([
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], LoginReqDto.prototype, "username", void 0);
-__decorate([
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], LoginReqDto.prototype, "password", void 0);
+let LoginReqDto = (() => {
+    class LoginReqDto {
+    }
+    __decorate([
+        class_validator_1.IsNotEmpty(),
+        class_validator_1.IsString(),
+        __metadata("design:type", String)
+    ], LoginReqDto.prototype, "username", void 0);
+    __decorate([
+        class_validator_1.IsNotEmpty(),
+        class_validator_1.IsString(),
+        __metadata("design:type", String)
+    ], LoginReqDto.prototype, "password", void 0);
+    return LoginReqDto;
+})();
 exports.LoginReqDto = LoginReqDto;
 //# sourceMappingURL=user.dto.js.map

@@ -6,14 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JwtAuthGuard = exports.UseGuards = void 0;
 const common_1 = require("@nestjs/common");
-exports.UseGuards = common_1.UseGuards;
+Object.defineProperty(exports, "UseGuards", { enumerable: true, get: function () { return common_1.UseGuards; } });
 const passport_1 = require("@nestjs/passport");
 const jwt_strategy_1 = require("./jwt.strategy");
-let JwtAuthGuard = class JwtAuthGuard extends passport_1.AuthGuard(jwt_strategy_1.DEFAULT_STATEGIE) {
-};
-JwtAuthGuard = __decorate([
-    common_1.Injectable()
-], JwtAuthGuard);
+let JwtAuthGuard = (() => {
+    let JwtAuthGuard = class JwtAuthGuard extends passport_1.AuthGuard(jwt_strategy_1.DEFAULT_STATEGIE) {
+    };
+    JwtAuthGuard = __decorate([
+        common_1.Injectable()
+    ], JwtAuthGuard);
+    return JwtAuthGuard;
+})();
 exports.JwtAuthGuard = JwtAuthGuard;
 //# sourceMappingURL=jwt-auth.guard.js.map

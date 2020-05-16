@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JwtStrategy = exports.DEFAULT_STATEGIE = exports.JWT_SECRET = void 0;
 const passport_jwt_1 = require("passport-jwt");
 const passport_1 = require("@nestjs/passport");
 const common_1 = require("@nestjs/common");
@@ -18,21 +19,24 @@ exports.JWT_SECRET = env
     .required()
     .asString();
 exports.DEFAULT_STATEGIE = 'jwt';
-let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport_jwt_1.Strategy) {
-    constructor() {
-        super({
-            jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
-            ignoreExpiration: false,
-            secretOrKey: exports.JWT_SECRET,
-        });
-    }
-    async validate(payload) {
-        return { userId: payload.id, username: payload.username };
-    }
-};
-JwtStrategy = __decorate([
-    common_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], JwtStrategy);
+let JwtStrategy = (() => {
+    let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport_jwt_1.Strategy) {
+        constructor() {
+            super({
+                jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
+                ignoreExpiration: false,
+                secretOrKey: exports.JWT_SECRET,
+            });
+        }
+        async validate(payload) {
+            return { userId: payload.id, username: payload.username };
+        }
+    };
+    JwtStrategy = __decorate([
+        common_1.Injectable(),
+        __metadata("design:paramtypes", [])
+    ], JwtStrategy);
+    return JwtStrategy;
+})();
 exports.JwtStrategy = JwtStrategy;
 //# sourceMappingURL=jwt.strategy.js.map
