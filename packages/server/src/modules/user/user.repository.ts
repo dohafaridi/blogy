@@ -11,7 +11,6 @@ import { RegisterReqDto, LoginReqDto, GetSessionResDto } from './user.dto';
 export class UserRepository extends Repository<UserEntity> {
   async ensureUsernameUnique(username: string) {
     const user = await this.findOne({ username });
-    console.log(user);
     if (user) {
       throw new ConflictException(
         `'Username ${username} is unavailable. Please try another.'`,
